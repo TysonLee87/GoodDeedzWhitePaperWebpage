@@ -13,4 +13,4 @@ const ImpactResponsibility = () => {
   );
 };
 
-export default ImpactResponsibility;
+export default ImpactResponsibility; 

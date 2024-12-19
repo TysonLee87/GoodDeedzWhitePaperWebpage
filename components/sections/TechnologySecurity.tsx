@@ -13,4 +13,4 @@ const TechnologySecurity = () => {
   );
 };
 
-export default TechnologySecurity;
+export default TechnologySecurity; 

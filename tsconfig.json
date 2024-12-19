@@ -17,33 +17,19 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "jsx": "preserve",
-    "baseUrl": ".",
-    "paths": {
-      "@components/*": [
-        "components/*"
-      ],
-      "@pages/*": [
-        "pages/*"
-      ],
-      "@content/*": [
-        "content/*"
-      ]
-      // Add other path mappings as needed
-    },
     "incremental": true,
-    "plugins": [
-      {
-        "name": "next"
-      }
+    "types": [
+      "node",
+      "jest"
     ]
   },
   "include": [
-    "**/*.ts",
-    "**/*.tsx",
     "next-env.d.ts",
-    ".next/types/**/*.ts"
+    "**/*.ts",
+    "**/*.tsx"
   ],
   "exclude": [
     "node_modules"
   ]
 }
+ 

@@ -121,3 +121,4 @@ export const whitepaperContent: WhitepaperContent = {
     // ... other fields if necessary
   },
 };
+ 

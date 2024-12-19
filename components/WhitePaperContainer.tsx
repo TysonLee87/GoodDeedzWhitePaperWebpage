@@ -9,6 +9,7 @@ import {
   BarChart3,
   Globe2,
   Rocket,
+  TrendingUp,
 } from 'lucide-react';
 import {
   ExecutiveSummary,
@@ -20,6 +21,7 @@ import {
   RoadmapMilestones,
   ImpactResponsibility,
 } from './sections';
+import MarketLandscapePartTwo from './sections/MarketLandscapePartTwo';
 
 const WhitePaperContainer = () => {
   const [activeSection, setActiveSection] = useState('executive');
@@ -27,6 +29,7 @@ const WhitePaperContainer = () => {
   const sections = [
     { id: 'executive', title: 'Executive Summary', icon: Book },
     { id: 'market', title: 'Market Landscape', icon: Target },
+    { id: 'marketPartTwo', title: 'Market Landscape - Part 2', icon: TrendingUp },
     { id: 'problem', title: 'Problem Statement', icon: Lightbulb },
     { id: 'solution', title: 'The GoodDeedz Solution', icon: Heart },
     { id: 'competitive', title: 'Competitive Landscape', icon: BarChart3 },
@@ -41,6 +44,8 @@ const WhitePaperContainer = () => {
         return <ExecutiveSummary />;
       case 'market':
         return <MarketLandscape />;
+      case 'marketPartTwo':
+        return <MarketLandscapePartTwo />;
       case 'problem':
         return <ProblemStatement />;
       case 'solution':
@@ -102,3 +107,4 @@ const WhitePaperContainer = () => {
 };
 
 export default WhitePaperContainer;
+ 
