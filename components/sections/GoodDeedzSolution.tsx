@@ -1,15 +1,12 @@
 import React from 'react';
+import { whitepaperContent } from '../../content/whitepaper';
 
-interface GoodDeedzSolutionProps {
-  title: string;
-  solution: string;
-  // Add other fields if necessary
-}
+const GoodDeedzSolution = () => {
+  const { title, solution } = whitepaperContent.goodDeedzSolution;
 
-const GoodDeedzSolution: React.FC<GoodDeedzSolutionProps> = ({ title, solution }) => {
   return (
     <section className="good-deedz-solution">
-      <h2 className="text-2xl font-semibold mb-4">{title}</h2>
+      <h2 className="text-3xl font-bold mb-4">{title}</h2>
       <p className="text-gray-700 whitespace-pre-line">{solution}</p>
       {/* Extend this section with more detailed content as needed */}
     </section>

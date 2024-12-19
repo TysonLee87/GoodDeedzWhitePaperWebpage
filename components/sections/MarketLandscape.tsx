@@ -1,15 +1,12 @@
 import React from 'react';
+import { whitepaperContent } from '../../content/whitepaper';
 
-interface MarketLandscapeProps {
-  title: string;
-  landscape: string;
-  // Add other fields if necessary
-}
+const MarketLandscape = () => {
+  const { title, landscape } = whitepaperContent.marketLandscape;
 
-const MarketLandscape: React.FC<MarketLandscapeProps> = ({ title, landscape }) => {
   return (
     <section className="market-landscape">
-      <h2 className="text-2xl font-semibold mb-4">{title}</h2>
+      <h2 className="text-3xl font-bold mb-4">{title}</h2>
       <p className="text-gray-700 whitespace-pre-line">{landscape}</p>
       {/* Extend this section with more detailed content as needed */}
     </section>

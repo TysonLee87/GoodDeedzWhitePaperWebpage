@@ -1,15 +1,12 @@
 import React from 'react';
+import { whitepaperContent } from '../../content/whitepaper';
 
-interface RoadmapMilestonesProps {
-  title: string;
-  roadmap: string;
-  // Add other fields if necessary
-}
+const RoadmapMilestones = () => {
+  const { title, roadmap } = whitepaperContent.roadmapMilestones;
 
-const RoadmapMilestones: React.FC<RoadmapMilestonesProps> = ({ title, roadmap }) => {
   return (
     <section className="roadmap-milestones">
-      <h2 className="text-2xl font-semibold mb-4">{title}</h2>
+      <h2 className="text-3xl font-bold mb-4">{title}</h2>
       <p className="text-gray-700 whitespace-pre-line">{roadmap}</p>
       {/* Extend this section with more detailed content as needed */}
     </section>

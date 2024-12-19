@@ -1,14 +1,14 @@
 import React from 'react';
+import { whitepaperContent } from '../../content/whitepaper';
 
-interface CompetitiveLandscapeProps {
-  competitive: string;
-}
+const CompetitiveLandscape = () => {
+  const { title, competitive } = whitepaperContent.competitiveLandscape;
 
-const CompetitiveLandscape: React.FC<CompetitiveLandscapeProps> = ({ competitive }) => {
   return (
     <section className="competitive-landscape">
-      <h2 className="text-2xl font-semibold mb-4">Competitive Landscape</h2>
+      <h2 className="text-3xl font-bold mb-4">{title}</h2>
       <p className="text-gray-700 whitespace-pre-line">{competitive}</p>
+      {/* Extend this section with more detailed content as needed */}
     </section>
   );
 };

@@ -20,32 +20,11 @@ import {
   RoadmapMilestones,
   ImpactResponsibility,
 } from './sections';
-import { WhitepaperContent } from '../content/whitepaper';
 
-type SectionId =
-  | 'executive'
-  | 'market'
-  | 'problem'
-  | 'solution'
-  | 'competitive'
-  | 'technology'
-  | 'roadmap'
-  | 'impact';
+const WhitePaperContainer = () => {
+  const [activeSection, setActiveSection] = useState('executive');
 
-interface Section {
-  id: SectionId;
-  title: string;
-  icon: React.ComponentType<{ size?: number }>;
-}
-
-interface WhitePaperContainerProps {
-  content: WhitepaperContent;
-}
-
-const WhitePaperContainer: React.FC<WhitePaperContainerProps> = ({ content }) => {
-  const [activeSection, setActiveSection] = useState<SectionId>('executive');
-
-  const sections: Section[] = [
+  const sections = [
     { id: 'executive', title: 'Executive Summary', icon: Book },
     { id: 'market', title: 'Market Landscape', icon: Target },
     { id: 'problem', title: 'Problem Statement', icon: Lightbulb },
@@ -56,24 +35,24 @@ const WhitePaperContainer: React.FC<WhitePaperContainerProps> = ({ content }) =>
     { id: 'impact', title: 'Impact & Responsibility', icon: Globe2 },
   ];
 
-  const renderSection = () => {
+  const renderActiveSection = () => {
     switch (activeSection) {
       case 'executive':
-        return <ExecutiveSummary {...content.executiveSummary} />;
+        return <ExecutiveSummary />;
       case 'market':
-        return <MarketLandscape {...content.marketLandscape} />;
+        return <MarketLandscape />;
       case 'problem':
-        return <ProblemStatement {...content.problemStatement} />;
+        return <ProblemStatement />;
       case 'solution':
-        return <GoodDeedzSolution {...content.goodDeedzSolution} />;
+        return <GoodDeedzSolution />;
       case 'competitive':
-        return <CompetitiveLandscape {...content.competitiveLandscape} />;
+        return <CompetitiveLandscape />;
       case 'technology':
-        return <TechnologySecurity {...content.technologySecurity} />;
+        return <TechnologySecurity />;
       case 'roadmap':
-        return <RoadmapMilestones {...content.roadmapMilestones} />;
+        return <RoadmapMilestones />;
       case 'impact':
-        return <ImpactResponsibility {...content.impactResponsibility} />;
+        return <ImpactResponsibility />;
       default:
         return (
           <div className="bg-white rounded-lg shadow-sm p-8">
@@ -103,12 +82,11 @@ const WhitePaperContainer: React.FC<WhitePaperContainerProps> = ({ content }) =>
                   ? 'bg-indigo-50 text-indigo-600'
                   : 'text-gray-600 hover:bg-gray-50'
               }`}
-              aria-current={activeSection === section.id ? 'page' : undefined}
             >
-              <section.icon size={18} aria-hidden="true" />
+              <section.icon size={18} />
               <span className="text-sm font-medium">{section.title}</span>
               {activeSection === section.id && (
-                <ChevronRight size={16} className="ml-auto" aria-hidden="true" />
+                <ChevronRight size={16} className="ml-auto" />
               )}
             </button>
           ))}
@@ -117,7 +95,7 @@ const WhitePaperContainer: React.FC<WhitePaperContainerProps> = ({ content }) =>
 
       {/* Main Content Area */}
       <div className="ml-64 flex-1 p-8">
-        <div className="max-w-4xl mx-auto">{renderSection()}</div>
+        <div className="max-w-4xl mx-auto">{renderActiveSection()}</div>
       </div>
     </div>
   );
